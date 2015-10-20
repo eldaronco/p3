@@ -14,3 +14,7 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/lorem_ipsum/{numParagraphs}', 'LIGenController@getParas');
+
+Route::get('/random_user/{numUsers}', 'RandUserController@getUsers');
