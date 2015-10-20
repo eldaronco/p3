@@ -12,9 +12,17 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
+});
+Route::get('/lorem_ipsum', function () {
+    return view('LIGen.paras');
+});
+Route::get('/random_user', function () {
+    return view('RandUser.users');
 });
 
-Route::get('/lorem_ipsum/{numParagraphs}', 'LIGenController@getParas');
+Route::get('/lorem_ipsum', 'LIGenController@getParas');
+Route::post('/lorem_ipsum', 'LIGenController@postNumParas');
 
-Route::get('/random_user/{numUsers}', 'RandUserController@getUsers');
+Route::get('/random_user', 'RandUserController@getUsers');
+Route::post('/random_user', 'RandUserController@postNumUsers');

@@ -12,11 +12,11 @@
     <header>
 
     </header>
-
+    <div class="container">
     <section>
         @yield('content')
     </section>
-
+  </div>
     <footer>
         &copy; {{ date('Y') }}
     </footer>

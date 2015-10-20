@@ -17,11 +17,38 @@ such as a page specific styesheets.
 
 
 @section('content')
-    @if($name)
-        <h1>New User: {{ $name }}</h1>
-    @else
-        <h1>No name chosen</h1>
-    @endif
+<form method="POST" action="/lorem_ipsum">
+
+   <input type='hidden' value='{{ csrf_token() }}' name='_token'>
+
+   <fieldset>
+       <label for='numParagraphs'>Number of Paragraphs:</label>
+       <input type="text" id='numParagraphs' name="numParagraphs">
+
+   </fieldset>
+
+   <br />
+   <button type="submit" class="btn btn-primary">Get Text</button>
+</form>
+@if (!isset($paragraphs[0]))
+<div id='randomText' name='randomText'>
+<h4>Get some text!</h4>
+</div>
+@else
+
+<div id='randomText' name='randomText'>
+  @foreach ($paragraphs as $value)
+  <p>
+    {{$value}}
+  </p>
+
+  @endforeach
+ </div>
+
+
+
+</div>
+@endif
 @stop
 
 

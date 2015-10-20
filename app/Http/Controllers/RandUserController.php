@@ -9,35 +9,30 @@ use App\Http\Controllers\Controller;
 
 class RandUserController extends Controller
 {
-
     /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * Responds to requests to POST /random_user
      */
-    public function store(Request $request)
-    {
-        //
+    public function postNumUsers(Request $request) {
+        $numUsers = $request->input('numUsers');
+
+        //echo nl2br("Here is my random user page!\n");
+        $faker = \Faker\Factory::create();
+        $names = "";
+        for ($i=0; $i < $numUsers; $i++) {
+          $name_array[$i] = $faker->name;
+        }
+       //echo $name_array[2];
+        return view('RandUser.users')->with('name_array', $name_array);
+
     }
-
     /**
-     * Display the specified resource.
+     * Display the input form.
      *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     *
      */
-    public function getUsers($numUsers)
+    public function getUsers()
     {
-      //echo nl2br("Here is my random user page!\n");
-      $faker = \Faker\Factory::create();
-
-      for ($i=0; $i < $numUsers; $i++) {
-      //echo nl2br($faker->name . "\n");
-      $name = $faker->name;
-      return view('RandUser.users')->with('name', $name);
-      }
-
+      return view('RandUser.users');
     }
 
 }
