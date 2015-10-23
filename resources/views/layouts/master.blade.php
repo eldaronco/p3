@@ -11,10 +11,11 @@ bootstrap, so that is listed here. Also common main title and footer.  -->
 </head>
 <body>
   <h1 class='main_title'>Developer's Best Friend</h1>
-  <header>
-    @yield('header')
-  </header>
   <div class="container">
+    <header>
+      @yield('header')
+    </header>
+
     <section>
       @yield('content')
     </section>

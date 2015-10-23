@@ -10,10 +10,10 @@
     User Generator
 @stop
 
-<p><a href='/'>Home</a><p>
-<br />
 
 @section('header')
+<p><a href='/'>Home</a></p>
+<br />
 This is your random user generator.  Please enter the number of names you would like to generate!
 @stop
 
@@ -36,7 +36,7 @@ entered by the user back into the field after the form submit.-->
 </form>
 
 @if (!isset($name_array[0])) <!--No names submitted-->
-  <div id='names' name='names' class='no_result_box'>
+  <div id='names' class='no_result_box'>
     <h4>Get some names!</h4>
 <!--Display error messages on the screen if validation fails -->
     @if(count($errors) > 0)
@@ -48,7 +48,7 @@ entered by the user back into the field after the form submit.-->
       @endif
   </div>
 @else <!--All is well so display the names from the arrray -->
-  <div id='names' name='names' class='result_box'>
+  <div id='names' class='result_box'>
   @foreach ($name_array as $value)
     <p>
       {{$value}}

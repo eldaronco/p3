@@ -12,10 +12,10 @@
   head section and no javascript so I didn't need the last body section.
 --}}
 
-<p><a href='/'>Home</a><p>
-  <br />
 
 @section('header')
+<p><a href='/'>Home</a></p>
+<br />
 This is your random text generator.  Please enter the number of paragraphs you would like to generate.
 @stop
 
@@ -35,7 +35,7 @@ This is your random text generator.  Please enter the number of paragraphs you w
 </form>
 
 @if (!isset($paragraphs[0])) <!--No paragraphs sent to the view so check for errors or prompt for user input-->
-  <div id='randomText' name='randomText' class='no_result_box'>
+  <div id='randomText' class='no_result_box'>
     <h4>Get some text!</h4>
     @if(count($errors) > 0)
       <ul class='error_message'>
@@ -46,7 +46,7 @@ This is your random text generator.  Please enter the number of paragraphs you w
     @endif
   </div>
 @else <!--Input is good, so display each paragraph-->
-  <div id='randomText' name='randomText' class='result_box'>
+  <div id='randomText' class='result_box'>
   @foreach ($paragraphs as $value)
     <p>
       {{$value}}

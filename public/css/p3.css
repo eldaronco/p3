@@ -11,6 +11,7 @@ footer {
 a:link{
 	color: #000080;
 	text-decoration: underline;
+	float:left;
 }
 
 a:visited{
