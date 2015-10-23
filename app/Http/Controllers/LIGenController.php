@@ -23,7 +23,7 @@ class LIGenController extends Controller
       $generator = new \Badcow\LoremIpsum\Generator();
       $paragraphs = $generator->getParagraphs($numParagraphs);
       /* Sending back the numparagraphs as well so it can be re-entered in the input field after the post */
-      return view('LiGen.paras')->with('paragraphs', $paragraphs)->with('numParagraphs', $numParagraphs) ;
+      return view('LIGen.paras')->with('paragraphs', $paragraphs)->with('numParagraphs', $numParagraphs) ;
     }
 
 
