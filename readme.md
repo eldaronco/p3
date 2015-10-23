@@ -8,7 +8,7 @@ This project creates a web application called Developer's Best Friend.  The app 
 Random User Generator.  Both generators can be accessed from the application's main page.
 
 ## Demo
-http://screencast.com/
+http://screencast.com/t/NhrKOclJI
 
 ## Details for teaching team
 Due to time constraints, there are no bells and whistles here except for a little bootstrap and some validation.  Included is a css folder
