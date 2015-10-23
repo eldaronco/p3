@@ -18,9 +18,13 @@ class LIGenController extends Controller
     public function postNumParas(Request $request)
     {
       $numParagraphs = $request->input('numParagraphs');
+      $this->validate($request, [
+              'numParagraphs' => 'required|integer|max:99|min:0',
+          ]);
+
       $generator = new \Badcow\LoremIpsum\Generator();
-      $paragraphs = $generator->getParagraphs($numParagraphs);      
-      return view('LiGen.paras')->with('paragraphs', $paragraphs);
+      $paragraphs = $generator->getParagraphs($numParagraphs);
+      return view('LiGen.paras')->with('paragraphs', $paragraphs)->with('numParagraphs', $numParagraphs) ;
     }
 
 

@@ -8,9 +8,9 @@
     @yield('head')
 </head>
 <body>
-
+  <h1 class='main_title'>Developer's Best Friend</h1>
     <header>
-
+      @yield('header')
     </header>
     <div class="container">
     <section>
@@ -21,6 +21,6 @@
         &copy; {{ date('Y') }}
     </footer>
 
-
+@yield ('body')
 </body>
 </html>

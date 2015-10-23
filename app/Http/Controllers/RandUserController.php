@@ -15,14 +15,18 @@ class RandUserController extends Controller
     public function postNumUsers(Request $request) {
         $numUsers = $request->input('numUsers');
 
+        $this->validate($request, [
+                'numUsers' => 'required|integer|max:99|min:0',
+            ]);
+
         //echo nl2br("Here is my random user page!\n");
         $faker = \Faker\Factory::create();
-        $names = "";
+        $name_array = array();
         for ($i=0; $i < $numUsers; $i++) {
           $name_array[$i] = $faker->name;
         }
        //echo $name_array[2];
-        return view('RandUser.users')->with('name_array', $name_array);
+        return view('RandUser.users')->with('name_array', $name_array)->with('numUsers', $numUsers);
 
     }
     /**

@@ -9,20 +9,22 @@
 @stop
 
 @section('content')
-<div class = "container">
-    <h1>Developers Best Friend</h1>
+
 
     <h2>Lorem Ipsum Generator</h2>
-    <p>This is the text about the Lorem Ipsum generator</p>
+    <blockquote>
+    <p>The lorem ipsum text is placeholder text traditionally used to demonstrate the text elements of a document layout.  This
+    generator tool will produce up to 99 paragraphs of the text for your use.</p>
     <a href='/lorem_ipsum'>Generate some text...</a>
-
+</blockquote>
     <br>
 
     <h2>Random User Generator</h2>
-    <p>Create random user data for your applications. Like Lorem Ipsum, but for people.</p>
+    <blockquote>
+    <p>Create random user names for your application.  Generate up to 99 names at a time!</p>
 
     <a href='/random_user'>Generate some users...</a>
-</div>
+</blockquote>
 
 @stop
 
