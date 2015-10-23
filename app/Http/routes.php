@@ -9,16 +9,13 @@
 | It's a breeze. Simply tell Laravel the URIs it should respond to
 | and give it the controller to call when that URI is requested.
 |
+| So I added my routes for the post and get functions for lorem_ipsum
+| and random user generators.  The first route is the main route for the
+| landing page or index.
 */
 
 Route::get('/', function () {
     return view('index');
-});
-Route::get('/lorem_ipsum', function () {
-    return view('LIGen.paras');
-});
-Route::get('/random_user', function () {
-    return view('RandUser.users');
 });
 
 Route::get('/lorem_ipsum', 'LIGenController@getParas');
